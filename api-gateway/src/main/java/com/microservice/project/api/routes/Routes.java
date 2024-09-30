@@ -17,14 +17,14 @@ public class Routes {
 				.route(RequestPredicates.path("/product/**"), HandlerFunctions.http("http://product-service"))
 				.build();
 	}
-	
+
 	@Bean
 	public RouterFunction<ServerResponse> inventoryServiceRoute() {
 		return GatewayRouterFunctions.route("inventory-service")
 				.route(RequestPredicates.path("/inventory/**"), HandlerFunctions.http("http://inventory-service"))
 				.build();
 	}
-	
+
 	@Bean
 	public RouterFunction<ServerResponse> orderServiceRoute() {
 		return GatewayRouterFunctions.route("order-service")
