@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import com.microservice.project.order.dto.OrderRequest;
 
-@FeignClient(name = "inventory-service", url="http://localhost:8081/inventory")
+@FeignClient(name = "inventory-service", url="http://inventory-service")
 public interface InventoryClient {
 	
-	@PutMapping("/updateOrderedProductById/{id}/{quantity}")
+	@PutMapping("/inventory/updateOrderedProductById/{id}/{quantity}")
 	public ResponseEntity<?> updateOrderedProductById(@PathVariable Long id, @PathVariable int quantity); 
 
 }
