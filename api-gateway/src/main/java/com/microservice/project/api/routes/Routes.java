@@ -14,14 +14,14 @@ public class Routes {
 	@Bean
 	public RouterFunction<ServerResponse> productServiceGetRoute() {
 		return GatewayRouterFunctions.route("product-service")
-				.route(RequestPredicates.path("/product/**"), HandlerFunctions.http("http://product-service"))
+				.route(RequestPredicates.path("/product/**"), HandlerFunctions.http("http://product-service:8080"))
 				.build();
 	}
 
 	@Bean
 	public RouterFunction<ServerResponse> inventoryServiceRoute() {
 		return GatewayRouterFunctions.route("inventory-service")
-				.route(RequestPredicates.path("/inventory/**"), HandlerFunctions.http("http://localhost:8081"))
+				.route(RequestPredicates.path("/inventory/**"), HandlerFunctions.http("http://inventory-service:8081"))
 				.build();
 	}
 
